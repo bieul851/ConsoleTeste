@@ -9,7 +9,7 @@ namespace ConsoleApp4
 {
     class Program
     {
-        
+        static List<Ramais> ramais;
         static void Main(string[] args)
         {
 
@@ -24,14 +24,15 @@ namespace ConsoleApp4
                     {
                         String linha = streamReader.ReadLine();
 
-                        var array = linha.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-
-                        Ramais ramal = new Ramais(Convert.ToInt32(array[0]), array[1], Convert.ToInt32(array[2]));
+                        var array = linha.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);                        
                         
-                        //RamaisService ramais = new RamaisService();
-                        //ramais.RamalList(Convert.ToInt32(array[0]), array[1], Convert.ToInt32(array[2]));
+                        ramais = new List<Ramais>();
+                        ramais.Add(new Ramais(Convert.ToInt32(array[0]), array[1], Convert.ToInt32(array[2])));
 
-                        Console.WriteLine(ramal.GetRamais());
+                        foreach(Ramais r in ramais)
+                        {
+                            Console.WriteLine("Nome: " + r.Nome + " | Ramal: " + r.Ramal);
+                        }
                     }
                 }
                 

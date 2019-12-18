@@ -8,14 +8,13 @@ namespace ConsoleApp4
 {
     public class RamaisService
     {
-        public  List<Ramais> RamalList(int id, string nome, int ramal)
+        public List<Ramais> RamalList(int id, string nome, int ramal)
         {
 
 
             var listaRamais = new List<Ramais>();
-            listaRamais.AddRange(new[] {
-                new Ramais(id,nome,ramal),
-            });
+            Ramais ramais = new Ramais(id, nome, ramal);
+            listaRamais.Add(ramais);
 
             return listaRamais;
         }
