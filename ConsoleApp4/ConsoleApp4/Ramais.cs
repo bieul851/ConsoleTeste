@@ -22,6 +22,10 @@ namespace ConsoleApp4
             Ramal = ramal;
         }
 
+        public string GetRamais()
+        {
+            return $"Nome: {Nome} | Ramal: {Ramal}";
+        }
         
 
         
